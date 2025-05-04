@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: circleci-env
     group_suffix: null
+  main:
+    environment: circleci-env
 global:
   application_name: aws-circleci
   branch: null

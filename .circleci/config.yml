@@ -55,6 +55,9 @@ jobs:
             pip3 install awsebcli --upgrade --user
             export PATH=$HOME/.local/bin:$PATH
       - run:
+          name: Install dependencies (if needed)
+          command: npm install
+      - run:
           name: list files
           command: |
             ls -la
