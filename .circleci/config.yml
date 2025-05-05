@@ -66,6 +66,8 @@ jobs:
           name: Deploy to AWS Elastic Beanstalk
           command: |
             export PATH=$HOME/.local/bin:$PATH
+            eb init aws-circleci --platform node.js --region us-west-2
+            eb use circleci-env
             eb deploy
 
 workflows:
