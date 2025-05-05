@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-executor:
     docker:
-      - image: cimg/node:22.0
+      - image: cimg/node:22.15
     
 jobs:
   install-deps:
@@ -62,6 +62,11 @@ jobs:
           command: |
             ls -la
             cat .elasticbeanstalk/config.yml || echo "No config file found"
+      - run:
+          name: list
+          command: |
+            ls -la
+            ls -la dist
       - run:
           name: Deploy to AWS Elastic Beanstalk
           command: |
